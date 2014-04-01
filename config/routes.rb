@@ -1,10 +1,12 @@
 Bibber::Application.routes.draw do
+<<<<<<< HEAD
   # root
   root 'users#index'
 
   # resources
   resources :users
   resources :sessions
+  resources :references
 
   # custom
   get 'register' => 'users#new'
