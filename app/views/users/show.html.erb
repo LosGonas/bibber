@@ -9,12 +9,10 @@
 </p>
 
 <p>
-    <pre>
-      <%= @user.references.each do |x| %>
-          <%= x.to_bib%>
-      <% end %>
-    </pre>
-</p>
+    <%@user.references.each do |x| %>
+    <pre><%=x.to_bib%></pre>
+    <% end %>
 
+</p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
