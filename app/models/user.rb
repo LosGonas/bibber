@@ -4,4 +4,6 @@ class User
   key :username, String
   key :password, String
 
+  many :references
+
 end
