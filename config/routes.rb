@@ -1,5 +1,5 @@
 Bibber::Application.routes.draw do
-  resources :refences
+  resources :references
 
   resources :users
 

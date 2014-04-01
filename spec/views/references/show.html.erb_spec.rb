@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "refences/show" do
+describe "references/show" do
   before(:each) do
-    @refence = assign(:refence, stub_model(Refence))
+    @reference = assign(:reference, stub_model(Reference))
   end
 
   it "renders attributes in <p>" do

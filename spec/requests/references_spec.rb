@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe "Refences" do
-  describe "GET /refences" do
+describe "References" do
+  describe "GET /references" do
     it "works! (now write some real specs)" do
-      get refences_path
+      get references_path
       expect(response.status).to be(200)
     end
   end
