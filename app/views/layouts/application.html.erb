@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bibber</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Bibber</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <header>
+      <h1><%= link_to "Bibber", root_path %></h1>
+      <nav>
+        <ul>
+          <% if current_user %>
+            <li><%= current_user.username %>
+              <ul>
+                <li><%= link_to 'Log out', logout_path, method: 'delete' %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to 'Register', register_path %></li>
+            <li><%= link_to 'Log in', login_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
 
-</body>
+    <div class="alert"><%= alert %></div>
+    <div class="notice"><%= notice %></div>
+
+    <div id="torso">
+      <%= yield %>
+    </div>
+
+  </body>
 </html>
+
