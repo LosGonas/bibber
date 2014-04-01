@@ -1,7 +1,16 @@
 Bibber::Application.routes.draw do
+  # root
+  root 'users#index'
+
+  # resources
+  resources :users
+  resources :sessions
   resources :references
 
-  resources :users
+  # custom
+  get 'register' => 'users#new'
+  get 'login' => 'sessions#new'
+  delete 'logout' => 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
