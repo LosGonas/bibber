@@ -1,5 +1,4 @@
 Bibber::Application.routes.draw do
-<<<<<<< HEAD
   # root
   root 'users#index'
 
