@@ -30,6 +30,7 @@ describe ReferencesController do
   # ReferencesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+=begin
   describe "GET index" do
     it "assigns all references as @references" do
       reference = Reference.create! valid_attributes
@@ -60,7 +61,9 @@ describe ReferencesController do
       expect(assigns(:reference)).to eq(reference)
     end
   end
+=end
 
+=begin
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Reference" do
@@ -156,5 +159,6 @@ describe ReferencesController do
       expect(response).to redirect_to(references_url)
     end
   end
+=end
 
 end
