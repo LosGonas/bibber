@@ -2,6 +2,9 @@ class Reference
   # mixins
   include MongoMapper::Document
 
+  # rels
+  belongs_to :user
+
   # keys
   key :entry_type, String
   key :entries, Hash
