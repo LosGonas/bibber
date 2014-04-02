@@ -16,6 +16,7 @@
           <% if current_user %>
             <li><%= current_user.username %>
               <ul>
+                <li><%= link_to 'Profile', current_user %></li>
                 <li><%= link_to 'Log out', logout_path, method: 'delete' %></li>
               </ul>
             </li>
