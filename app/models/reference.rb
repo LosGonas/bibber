@@ -2,6 +2,19 @@ class Reference
   # mixins
   include MongoMapper::Document
 
+  # consts
+  TYPES = {
+    article: {
+      desc: "An article from a journal or magazine.",
+      required: [:author, :title, :journal, :year],
+      optional: [:volume, :number, :pages, :month, :note, :key]
+    },
+    book: {
+      desc: "A book with an explicit publisher.",
+      required: [:author, :editor, :title, :publisher, :year], # author OR editor required
+      optional: [:'volume/number', :series, :address, :edition, :month, :note, :key]
+  }}
+
   # rels
   belongs_to :user
 
