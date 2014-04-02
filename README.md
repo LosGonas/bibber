@@ -3,7 +3,7 @@
 Miniproject's repo for Ohtu course at CSDep of HY.
 
 ## Heroku
-htth://bibber.herokuapp.com
+http://bibber.herokuapp.com
 
 ## Travis
 [![Build Status](https://travis-ci.org/LosGonas/bibber.png)](https://travis-ci.org/LosGonas/bibber)
