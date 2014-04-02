@@ -1,17 +1,29 @@
 <%= form_for(@reference) do |f| %>
-  <% if @reference.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@reference.errors.count, "error") %> prohibited this reference from being saved:</h2>
+    <% if @reference.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@reference.errors.count, "error") %> prohibited this reference from being saved:</h2>
 
-      <ul>
-      <% @reference.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @reference.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <% if @reference.new_record? %>
+        <div class="field">
+          <%= f.label :entry_type %><br />
+          <%= f.text_field :entry_type %>
+        </div>
+        <div class="field">
+          <%= f.label :entries %><br />
+          <%= f.text_field :entries %>
+        </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

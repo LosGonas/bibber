@@ -28,10 +28,10 @@ class ReferencesController < ApplicationController
 
     respond_to do |format|
       if @reference.save
-        format.html { redirect_to @reference, notice: 'Reference was successfully created.' }
+        format.html { redirect_to @reference, notice: 'SUCCESS' }
         format.json { render action: 'show', status: :created, location: @reference }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', notice: 'FAIL' }
         format.json { render json: @reference.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +69,6 @@ class ReferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reference_params
-      params[:reference]
+      params.require(:reference).permit(:entry_type, :entries)
     end
 end
