@@ -4,26 +4,45 @@ class Reference
 
   # consts
   TYPES = {
-    articles: {
+    article: {
       desc: "An article from a journal or magazine.",
       required: [:author, :title, :journal, :year],
       optional: [:volume, :number, :pages, :month, :note, :key]
     },
-    books: {
+    book: {
       desc: "A book with an explicit publisher.",
       required: [:author, :editor, :title, :publisher, :year], # author OR editor required
       optional: [:volume, :number, :series, :address, :edition, :month, :note, :key]
+    },
+    inproceeding: {
+      desc: "An article in a conference proceedings.",
+      required: [:author, :title, :booktitle, :year],
+      optional: [:editor, :volume, :series, :pages, :address, :month, :organization, :publisher, :note, :key]
   }}
-
-  # rels
-  belongs_to :user
 
   # keys
   key :entry_type, String
   key :entries, Hash
 
-  def get(type, field)
-    TYPES[type.to_sym][field.to_sym]
+  # validations
+  validates :entry_type, presence: true
+
+  # custom validations
+  validate do |this|
+    # REMEMBAH: this implies _every_ required field has to be present
+    et = this.entry_type.to_sym
+    TYPES[et][:required].each do |field|
+      if entries[field].blank?
+        errors.add(field, "cannot be empty")
+      end
+    end
+  end
+
+  # rels
+  belongs_to :user
+
+  def get(field)
+    TYPES[entry_type.to_sym][field.to_sym]
   end
 
   def to_bib(id="KB04")
@@ -32,7 +51,7 @@ class Reference
 
   class << self
     def entry_types
-      TYPES.keys
+      TYPES.keys.map { |k| k.to_s.pluralize }
     end
   end
 end
