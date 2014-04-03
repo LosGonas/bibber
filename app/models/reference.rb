@@ -29,5 +29,11 @@ class Reference
   def to_bib(id="KB04")
     "@#{entry_type} {#{id},\n#{entries.map {|x|"  #{x[0]} = \"#{x[1]}\""}.join(",\n")}\n}"
   end
+
+  class << self
+    def entry_types
+      TYPES.keys
+    end
+  end
 end
 
