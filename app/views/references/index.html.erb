@@ -1,25 +1,23 @@
-<h1>Listing references</h1>
+<h1>All References</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<div id="references">
+  <% @references.each do |reference| %>
+    <div class="reference">
+      <h3><%= reference.entry_type %></h3>
+      <% reference.entries.each do |key, value| %>
+        <% if value.present? %>
+          <div class="entry">
+            <span class="key"><%= key.capitalize %></span>
+            <span class="key"><%= value %></span>
+          </div>
+        <% end %>
+      <% end %>
+      <div class="actions">
+        <%= link_to 'Show', reference %> |
+        <%= link_to 'Edit', edit_reference_path(reference) %> |
+        <%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+</div>
 
-  <tbody>
-    <% @references.each do |reference| %>
-      <tr>
-        <td><%= link_to 'Show', reference %></td>
-        <td><%= link_to 'Edit', edit_reference_path(reference) %></td>
-        <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Reference', new_reference_path %>
