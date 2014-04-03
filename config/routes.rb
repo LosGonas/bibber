@@ -5,10 +5,15 @@ Bibber::Application.routes.draw do
   # resources
   resources :users
   resources :sessions
-  resources :references
+  resources :references, except: [:new]
+
+  Reference.entry_types.each do |et|
+    resources(et, controller: :references, entry_type: et.singularize)
+  end
 
   # reference entry types
-  get ':entry_type/new', entry_type: /(#{Reference.entry_types.join('|')})/, to: 'references#new'
+  # this is too hacky, leave it off
+  # get ':entry_type/new', entry_type: /(#{Reference.entry_types.join('|')})/, to: 'references#new'
 
   # custom
   get 'register' => 'users#new'
