@@ -7,6 +7,9 @@ Bibber::Application.routes.draw do
   resources :sessions
   resources :references
 
+  # reference entry types
+  get ':entry_type/new', entry_type: /(#{Reference.entry_types.join('|')})/, to: 'references#new'
+
   # custom
   get 'register' => 'users#new'
   get 'login' => 'sessions#new'
