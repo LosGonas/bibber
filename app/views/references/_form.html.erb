@@ -1,29 +1,43 @@
 <%= form_for(@reference) do |f| %>
-    <% if @reference.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@reference.errors.count, "error") %> prohibited this reference from being saved:</h2>
-
-          <ul>
-            <% @reference.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-
-
-    <% if @reference.new_record? %>
-        <div class="field">
-          <%= f.label :entry_type %><br />
-          <%= f.text_field :entry_type %>
-        </div>
-        <div class="field">
-          <%= f.label :entries %><br />
-          <%= f.text_field :entries %>
-        </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit %>
+  <% if @reference.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reference.errors.count, "error") %> prohibited this reference from being saved:</h2>
+      <ul>
+        <% @reference.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
+  <% end %>
+  <%= f.hidden_field :user_id, value: current_user.id.to_s %>
+  <%= f.hidden_field :entry_type, value: @reference.entry_type %>
+
+  <div class="description">
+    <h2><%= @reference.get(:desc) %></h2>
+  </div>
+
+  <div class="required">
+    <h3>Required</h3>
+    <% for field in @reference.get(:required) %>
+      <div class="field">
+        <%= label_tag field, nil, for: "reference_entries_#{field}" %><br>
+        <%= text_field_tag field, @reference.entries[field], id: "reference_entries_#{field}", name: "reference[entries][#{field}]" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="optional">
+    <h3>Optional</h3>
+    <% for field in @reference.get(:optional) %>
+      <div class="field">
+        <%= label_tag field, nil, for: "reference_entries_#{field}" %><br>
+        <%= text_field_tag field, @reference.entries[field], id: "reference_entries_#{field}", name: "reference[entries][#{field}]" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>
+
