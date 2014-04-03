@@ -1,5 +1,6 @@
 class ReferencesController < ApplicationController
   before_action :set_reference, only: [:show, :edit, :update, :destroy]
+  before_action :authorize!, except: [:index, :show]
 
   # GET /references
   # GET /references.json
@@ -14,7 +15,7 @@ class ReferencesController < ApplicationController
 
   # GET /references/new
   def new
-    @reference = Reference.new
+    @reference = Reference.new(entry_type: params[:entry_type].singularize)
   end
 
   # GET /references/1/edit
@@ -41,7 +42,7 @@ class ReferencesController < ApplicationController
   # PATCH/PUT /references/1.json
   def update
     respond_to do |format|
-      if @reference.update(reference_params)
+      if @reference.update_attributes(reference_params)
         format.html { redirect_to @reference, notice: 'Reference was successfully updated.' }
         format.json { head :no_content }
       else
@@ -69,6 +70,9 @@ class ReferencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reference_params
-      params.require(:reference).permit(:entry_type, :entries)
+      # params.require(:reference).permit(:entry_type, :entries, :user_id)
+      params.require(:reference).tap do |allowed|
+        allowed[:entries] = params[:reference][:entries]
+      end
     end
 end
