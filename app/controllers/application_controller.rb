@@ -7,5 +7,11 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+
+  def authorize!
+    if current_user.nil?
+      redirect_to login_path, alert: 'You have to login to do that'
+    end
+  end
 end
 
