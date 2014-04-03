@@ -4,15 +4,15 @@ class Reference
 
   # consts
   TYPES = {
-    article: {
+    articles: {
       desc: "An article from a journal or magazine.",
       required: [:author, :title, :journal, :year],
       optional: [:volume, :number, :pages, :month, :note, :key]
     },
-    book: {
+    books: {
       desc: "A book with an explicit publisher.",
       required: [:author, :editor, :title, :publisher, :year], # author OR editor required
-      optional: [:'volume/number', :series, :address, :edition, :month, :note, :key]
+      optional: [:volume, :number, :series, :address, :edition, :month, :note, :key]
   }}
 
   # rels
