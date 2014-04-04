@@ -38,7 +38,7 @@ describe ReferencesController do
       expect(assigns(:references)).to eq([reference])
     end
   end
-
+=end
   describe "GET show" do
     it "assigns the requested reference as @reference" do
       reference = Reference.create! valid_attributes
@@ -61,9 +61,9 @@ describe ReferencesController do
       expect(assigns(:reference)).to eq(reference)
     end
   end
-=end
 
 =begin
+
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Reference" do
@@ -100,7 +100,8 @@ describe ReferencesController do
       end
     end
   end
-
+=end
+=begin
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested reference" do
