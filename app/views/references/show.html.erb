@@ -1,4 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div id="reference">
+  <h2><%= @reference.entry_type.capitalize %></h2>
+  <% @reference.entries.each do |key, value| %>
+    <% if value.present? %>
+      <div class="reference">
+        <span class="entry_key"><%= key.capitalize %></span>
+        <span class="entry_value"><%= value %></span>
+      </div>
+    <% end %>
+  <% end %>
 
-<%= link_to 'Edit', edit_reference_path(@reference) %> |
-<%= link_to 'Back', references_path %>
+  <pre>
+  <%= @reference.to_bib %>
+  </pre>
+  <div class="actions">
+    <%= link_to 'Back', references_path %> |
+    <%= link_to 'Edit', edit_reference_path(@reference) %> |
+    <%= link_to 'Destroy', @reference, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+</div>
+
