@@ -15,7 +15,8 @@
   <div class="actions">
     <%= link_to 'Back', references_path %> |
     <%= link_to 'Edit', edit_reference_path(@reference) %> |
-    <%= link_to 'Destroy', @reference, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Destroy', @reference, method: :delete, data: { confirm: 'Are you sure?' } %> |
+    <%= link_to 'Export', download_reference_path(@reference) %> 
   </div>
 </div>
 
