@@ -28,7 +28,15 @@ RSpec.configure do |config|
   # config.mock_with :flexmock
   # config.mock_with :rr
 
+  config.before(:suite)do
+    #DatabaseCleaner[:mongo_mapper].strategy = :truncation
+    DatabaseCleaner.clean
+  end
 
+  config.before(:each) do
+    DatabaseCleaner[:mongo_mapper].strategy = :truncation
+    #DatabaseCleaner.clean
+  end
 
 
   # Run specs in random order to surface order dependencies. If you find an

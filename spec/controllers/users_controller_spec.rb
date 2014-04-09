@@ -23,7 +23,7 @@ describe UsersController do
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "username" => "MyString", "password" => "passu" } }
+  let(:valid_attributes) { { "username" => "rspecc", "password" => "passu" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -40,6 +40,7 @@ describe UsersController do
   end
 =end
 
+=begin
   describe "GET show" do
     it "assigns the requested user as @user" do
       user = User.create! valid_attributes
@@ -99,6 +100,7 @@ describe UsersController do
       end
     end
   end
+=end
 
 =begin
   describe "PUT update" do
@@ -146,6 +148,7 @@ describe UsersController do
   end
 =end
 
+=begin
   describe "DELETE destroy" do
     it "destroys the requested user" do
       user = User.create! valid_attributes
@@ -160,5 +163,6 @@ describe UsersController do
       expect(response).to redirect_to(users_url)
     end
   end
+=end
 
 end

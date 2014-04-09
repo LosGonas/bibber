@@ -3,8 +3,8 @@ class User
   include MongoMapper::Document
 
   # keys
-  key :username, String
-  key :password, String
+  key :username, String, :unique => true, :required => true
+  key :password, String, :required => true
 
   # rels
   many :references
