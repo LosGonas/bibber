@@ -44,7 +44,8 @@ class Reference
   def get(field)
     TYPES[entry_type.to_sym][field.to_sym]
   end
-   
+
+
   def to_bib(id="KB04")
     "@#{entry_type} {#{id},\n#{entries.map {|x|"  #{x[0]} = \"#{x[1]}\""}.join(",\n")}\n}"
   end

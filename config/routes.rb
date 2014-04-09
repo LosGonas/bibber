@@ -5,9 +5,7 @@ Bibber::Application.routes.draw do
   # resources
   resources :users
   resources :sessions
-  resources :references, except: [:new] do
-    member {get "download"}
-  end
+  resources :references, except: [:new]
 
   Reference.entry_types.each do |et|
     resources(et, controller: :references, entry_type: et.singularize)
@@ -19,6 +17,7 @@ Bibber::Application.routes.draw do
 
   # custom
   get 'downloadAll' => 'references#downloadAll'
+  get 'download' => 'references#download'
   get 'register' => 'users#new'
   get 'login' => 'sessions#new'
   delete 'logout' => 'sessions#destroy'

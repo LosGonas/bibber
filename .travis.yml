@@ -6,7 +6,7 @@ services:
 deploy:
   provider: heroku
   api_key:
-    secure: IDEwUcn3ze6WaqG3gObg5MKYaKVmMiQvudyW0k//qdUhWk7hByc+C7HaCWVmeXrOT+TZtWUxPleuyX2WkejOnziSR7sP/WL5/78J9AF6vDQQD0x7yx7jpnOl+7P8sBhq8qpngb+p0fcOmBDTHihrC+ie/284GEB8RxPC8tcS2PM=
+    secure: X3aFSAGbgpVDe7kL8EhuEULGkfm75cbixARpom0Q34B1rRPt/B12YPEQx6UhbICYjliJVUJREgBeOks36XYqevKOrA9SCZEl3AyvZTU6TTWRc9cPO6b0cGoJlfCIMmaL68O2G8Ck4J4vw+sfVHEe1a1qJ/1u/otkoA2NmIgso2o=
   app: bibb
   on:
     repo: LosGonas/bibber

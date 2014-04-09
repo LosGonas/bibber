@@ -61,7 +61,7 @@ class ReferencesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   def download
     ref = Reference.find(params[:id])
     send_data ref.to_bib,
@@ -72,7 +72,9 @@ class ReferencesController < ApplicationController
   def downloadAll
     refs = Reference.all
     refs.each do |reference|
-      reference.download
+      send_data reference.to_bib,
+                :filename => "KB04.bib",
+                :type => "text/plain"
     end
 
   end
