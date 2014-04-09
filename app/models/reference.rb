@@ -27,6 +27,10 @@ class Reference
   # validations
   validates :entry_type, presence: true
 
+  def to_bib(id="KB04")
+    "@#{entry_type} {#{id},\n#{entries.map {|x|"  #{x[0]} = \"#{x[1]}\""}.join(",\n")}\n}"
+  end
+
   # custom validations
   validate do |this|
     # REMEMBAH: this implies _every_ required field has to be present
@@ -45,10 +49,6 @@ class Reference
     TYPES[entry_type.to_sym][field.to_sym]
   end
 
-
-  def to_bib(id="KB04")
-    "@#{entry_type} {#{id},\n#{entries.map {|x|"  #{x[0]} = \"#{x[1]}\""}.join(",\n")}\n}"
-  end
 
   def as_file
     to_bib
