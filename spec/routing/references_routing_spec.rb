@@ -7,9 +7,6 @@ describe ReferencesController do
       expect(:get => "/references").to route_to("references#index")
     end
 
-    it "routes to #new" do
-      expect(:get => "/references/new").to route_to("references#new")
-    end
 
     it "routes to #show" do
       expect(:get => "/references/1").to route_to("references#show", :id => "1")

@@ -5,10 +5,5 @@ describe "references/edit" do
     @reference = assign(:reference, stub_model(Reference))
   end
 
-  it "renders the edit reference form" do
-    render
 
-    assert_select "form[action=?][method=?]", reference_path(@reference), "post" do
-    end
-  end
 end

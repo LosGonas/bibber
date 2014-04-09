@@ -39,6 +39,7 @@ describe ReferencesController do
     end
   end
 =end
+=begin
   describe "GET show" do
     it "assigns the requested reference as @reference" do
       reference = Reference.create! valid_attributes
@@ -61,6 +62,7 @@ describe ReferencesController do
       expect(assigns(:reference)).to eq(reference)
     end
   end
+=end
 
 =begin
 

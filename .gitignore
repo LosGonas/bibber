@@ -18,3 +18,5 @@
 *.swp
 .idea/
 
+# Ignore OS X trash
+.DS_Store
