@@ -2406,3 +2406,804 @@ Processing by ReferencesController#download as HTML
   Rendered text template (0.0ms)
 Sent data KB04.bib (0.8ms)
 Completed 200 OK in 3ms (Views: 0.7ms)
+MONGODB [DEBUG] Logging level is currently :debug which could negatively impact client-side performance. You should set your logging level no lower than :info in production.
+MONGODB (3.1ms) admin['$cmd'].find({:ismaster=>1}).limit(-1)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:19:46 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 596ms (Views: 436.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/references.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/users.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/references.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/users.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:47 +0000
+
+
+Started GET "/references" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+Processing by ReferencesController#index as HTML
+  Rendered references/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 54ms (Views: 48.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/assets/users.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/assets/references.css?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/assets/references.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/assets/users.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/assets/application.js?body=1" for 80.220.245.174 at 2014-04-08 17:19:50 +0000
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:27:20 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 70ms
+
+ActionView::Template::Error (No route matches {:id=>nil} missing required keys: [:id]):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (128.9ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:30:20 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 70ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x007f1f140608f8>:0x007f1f14073cf0>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (44.4ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:30:51 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 187ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x000000024237e8>:0x00000002426880>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (112.6ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:31:24 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 216ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x007f1f1408d790>:0x007f1f1408c318>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (198.6ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:31:40 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 162ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x007f1f141c9668>:0x007f1f141c86a0>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (92.3ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:33:24 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 52ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x007f1f2441d300>:0x007f1f2441c680>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (61.0ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:34:00 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x000000023ca2b0>:0x000000023d3e50>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.7ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:34:04 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x000000023ca2b0>:0x00000003ecd300>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.6ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:34:37 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (15.1ms)
+Completed 500 Internal Server Error in 214ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x00000003813e60>:0x00000003812b00>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (145.8ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:34:42 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 129ms
+
+ActionView::Template::Error (undefined method `downloadAll_reference_path' for #<#<Class:0x00000003813e60>:0x007f1f24412978>):
+    27:           <% for et in entry_types %>
+    28:             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
+    29:           <% end %>
+    30:           <li><%= link_to 'Export all references', downloadAll_reference_path(@reference) %>  
+    31:         </ul>
+    32:       </nav>
+    33:     </header>
+  app/views/layouts/application.html.erb:30:in `_app_views_layouts_application_html_erb___3485495267966161519_69885862663380'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (171.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (323.3ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:35:14 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 145ms (Views: 143.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 80.220.245.174 at 2014-04-08 17:35:15 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 80.220.245.174 at 2014-04-08 17:35:15 +0000
+
+
+Started GET "/assets/users.css?body=1" for 80.220.245.174 at 2014-04-08 17:35:15 +0000
+
+
+Started GET "/assets/references.css?body=1" for 80.220.245.174 at 2014-04-08 17:35:15 +0000
+
+
+Started GET "/assets/scaffolds.css?body=1" for 80.220.245.174 at 2014-04-08 17:35:15 +0000
+
+
+Started GET "/assets/sessions.css?body=1" for 80.220.245.174 at 2014-04-08 17:35:15 +0000
+
+
+Started GET "/assets/references.js?body=1" for 80.220.245.174 at 2014-04-08 17:35:16 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 80.220.245.174 at 2014-04-08 17:35:16 +0000
+
+
+Started GET "/assets/users.js?body=1" for 80.220.245.174 at 2014-04-08 17:35:16 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 80.220.245.174 at 2014-04-08 17:35:16 +0000
+
+
+Started GET "/assets/application.js?body=1" for 80.220.245.174 at 2014-04-08 17:35:16 +0000
+
+
+Started GET "/downloadAll" for 80.220.245.174 at 2014-04-08 17:35:19 +0000
+
+SyntaxError (/home/action/bibber/app/controllers/references_controller.rb:72: formal argument cannot be an instance variable
+  def downloadAll(@references)
+                             ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected =>, expecting keyword_end
+    :filename =>"ref.bib",
+                ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected ',', expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__360946602791037046__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (259.6ms)
+
+
+Started GET "/downloadAll" for 80.220.245.174 at 2014-04-08 17:35:42 +0000
+
+SyntaxError (/home/action/bibber/app/controllers/references_controller.rb:72: formal argument cannot be an instance variable
+  def downloadAll(@references)
+                             ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected =>, expecting keyword_end
+    :filename =>"ref.bib",
+                ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected ',', expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__360946602791037046__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (27.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (198.3ms)
+
+
+Started GET "/downloadAll" for 80.220.245.174 at 2014-04-08 17:39:16 +0000
+
+SyntaxError (/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected =>, expecting keyword_end
+    :filename => "allRefs.bib",
+                ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected ',', expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__360946602791037046__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.5ms)
+
+
+Started GET "/" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 60ms (Views: 41.1ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/assets/application.css?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/assets/references.css?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/assets/users.css?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/assets/sessions.js?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/assets/references.js?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/assets/users.js?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/assets/application.js?body=1" for 80.220.245.174 at 2014-04-08 17:41:24 +0000
+
+
+Started GET "/downloadAll" for 80.220.245.174 at 2014-04-08 17:41:32 +0000
+
+SyntaxError (/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected =>, expecting keyword_end
+    :filename => "allRefs.bib",
+                ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected ',', expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__360946602791037046__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (111.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (252.2ms)
+
+
+Started GET "/downloadAll" for 80.220.245.174 at 2014-04-08 17:42:04 +0000
+Processing by ReferencesController#downloadAll as HTML
+Completed 500 Internal Server Error in 23ms
+
+NoMethodError (undefined method `each' for nil:NilClass):
+  app/controllers/references_controller.rb:73:in `downloadAll'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (117.8ms)
+
+
+Started GET "/downloadAll" for 80.220.245.174 at 2014-04-08 17:42:27 +0000
+
+SyntaxError (/home/action/bibber/app/controllers/references_controller.rb:72: formal argument cannot be an instance variable
+  def downloadAll(@references)
+                             ^):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__360946602791037046__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (8.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (26.5ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (150.9ms)
+
+
+Started GET "/downloadAll" for 80.220.245.174 at 2014-04-08 17:42:46 +0000
+
+SyntaxError (/home/action/bibber/app/controllers/references_controller.rb:72: formal argument cannot be an instance variable
+  def downloadAll(@references)
+                             ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected =>, expecting keyword_end
+    :filename => "allRefs.bib",
+                ^
+/home/action/bibber/app/controllers/references_controller.rb:76: syntax error, unexpected ',', expecting keyword_end):
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:424:in `block in load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:616:in `new_constants_in'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:423:in `load_file'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:324:in `require_or_load'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:463:in `load_missing_constant'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:184:in `const_missing'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `const_get'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:226:in `block in constantize'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `each'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `inject'
+  activesupport (4.0.2) lib/active_support/inflector/methods.rb:224:in `constantize'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:535:in `get'
+  activesupport (4.0.2) lib/active_support/dependencies.rb:566:in `constantize'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:76:in `controller_reference'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:66:in `controller'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:44:in `call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.0.2) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.0.2) lib/action_dispatch/routing/route_set.rb:680:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/flash.rb:241:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/cookies.rb:486:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:373:in `_run__360946602791037046__call__callbacks'
+  activesupport (4.0.2) lib/active_support/callbacks.rb:80:in `run_callbacks'
+  actionpack (4.0.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/reloader.rb:64:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.0.2) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `block in tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:25:in `tagged'
+  activesupport (4.0.2) lib/active_support/tagged_logging.rb:67:in `tagged'
+  railties (4.0.2) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.0.2) lib/active_support/cache/strategy/local_cache.rb:83:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.0.2) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.0.2) lib/rails/engine.rb:511:in `call'
+  railties (4.0.2) lib/rails/application.rb:97:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.rvm/rubies/ruby-2.0.0-p247/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+  Rendered /home/action/.rvm/gems/ruby-2.0.0-p247/gems/actionpack-4.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (86.7ms)

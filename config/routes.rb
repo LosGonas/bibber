@@ -18,6 +18,7 @@ Bibber::Application.routes.draw do
   # get ':entry_type/new', entry_type: /(#{Reference.entry_types.join('|')})/, to: 'references#new'
 
   # custom
+  get 'downloadAll' => 'references#downloadAll'
   get 'register' => 'users#new'
   get 'login' => 'sessions#new'
   delete 'logout' => 'sessions#destroy'

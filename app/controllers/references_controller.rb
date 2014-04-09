@@ -68,6 +68,14 @@ class ReferencesController < ApplicationController
     :filename => "KB04.bib",
     :type => "text/plain"
   end
+  
+  def downloadAll(@references)
+    @references.each do |reference|
+      send_data = send_data + "\n\n" + reference.to_bib
+    end
+    :filename => "allRefs.bib",
+    :type => "text/plain"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

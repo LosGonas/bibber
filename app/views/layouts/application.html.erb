@@ -27,6 +27,7 @@
           <% for et in entry_types %>
             <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
           <% end %>
+          <li><%= link_to 'Export all references', downloadAll_path(@reference) %>  
         </ul>
       </nav>
     </header>
