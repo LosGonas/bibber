@@ -61,6 +61,13 @@ class ReferencesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def download
+    ref = Reference.find(params[:id])
+    send_data ref.to_bib,
+    :filename => "KB04.bib",
+    :type => "text/plain"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
