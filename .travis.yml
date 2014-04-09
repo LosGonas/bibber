@@ -10,3 +10,4 @@ deploy:
   app: bibb
   on:
     repo: LosGonas/bibber
+  strategy: git
