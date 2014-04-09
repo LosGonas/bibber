@@ -1,7 +1,12 @@
 language: ruby
-
 rvm:
- - 2.0.0
-
+- 2.0.0
 services:
-  - mongodb
+- mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: IDEwUcn3ze6WaqG3gObg5MKYaKVmMiQvudyW0k//qdUhWk7hByc+C7HaCWVmeXrOT+TZtWUxPleuyX2WkejOnziSR7sP/WL5/78J9AF6vDQQD0x7yx7jpnOl+7P8sBhq8qpngb+p0fcOmBDTHihrC+ie/284GEB8RxPC8tcS2PM=
+  app: bibb
+  on:
+    repo: LosGonas/bibber
