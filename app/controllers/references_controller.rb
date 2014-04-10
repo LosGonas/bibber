@@ -26,6 +26,7 @@ class ReferencesController < ApplicationController
   # POST /references.json
   def create
     @reference = Reference.new(reference_params)
+    @reference.createID
 
     respond_to do |format|
       if @reference.save
@@ -43,6 +44,11 @@ class ReferencesController < ApplicationController
   def update
     respond_to do |format|
       if @reference.update_attributes(reference_params)
+
+        #set new ID and save
+        @reference.createID
+        @reference.save
+
         format.html { redirect_to @reference, notice: 'Reference was successfully updated.' }
         format.json { head :no_content }
       else
@@ -92,4 +98,6 @@ class ReferencesController < ApplicationController
         allowed[:entries] = params[:reference][:entries]
       end
     end
+
+    #set ref id
 end

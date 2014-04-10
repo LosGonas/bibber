@@ -1,6 +1,7 @@
 class Reference
   # mixins
   include MongoMapper::Document
+  belongs_to :user
 
   # consts
   TYPES = {
@@ -23,13 +24,10 @@ class Reference
   # keys
   key :entry_type, String
   key :entries, Hash
+  key :bib_id, String
 
   # validations
   validates :entry_type, presence: true
-
-  def to_bib(id="KB04")
-    "@#{entry_type} {#{id},\n#{entries.map {|x|"  #{x[0]} = \"#{x[1]}\""}.join(",\n")}\n}"
-  end
 
   # custom validations
   validate do |this|
@@ -42,8 +40,47 @@ class Reference
     end
   end
 
+
+  def createID
+    str = ""
+    authors = self.entries["author"].split(" ").each {|w| str += w.first}
+    str += self.entries["year"].last(2)
+    self.bib_id = str
+  end
+
+  def to_bib(id=self.bib_id)
+    #first row
+    str = "@#{entry_type} {#{id},\n"
+
+    #filter blanks
+    fields = entries.reject {|key, val| val.blank?}
+
+    #entries + last row
+    str += "#{fields.map {|key, val|"  #{key} = \"#{val}\""}.join(",\n")}\n}"
+
+  end
+
+
+  def specialChars(bib)
+    #muunnokset
+    h = {"ä" => '\"{a}',
+         "Ä" => '\"{A}',
+         "ö" => '\"{o}',
+         "Ö" => '\"{O}',
+         "å" => '\r{a}',
+         "Å" => '\r{A}'
+    }
+    #kaikki läpi
+    bib.gsub(/./) {|m| h.fetch(m,m)}
+  end
+
+
+
+
+
+
   # rels
-  belongs_to :user
+
 
   def get(field)
     TYPES[entry_type.to_sym][field.to_sym]

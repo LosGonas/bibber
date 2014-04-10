@@ -9,9 +9,11 @@
     <% end %>
   <% end %>
 
-  <pre>
-  <%= @reference.to_bib %>
-  </pre>
+  <p>UTF-8 BibTex</p>
+  <pre><%= @reference.to_bib %></pre>
+
+  <p>Non UTF-8 BibTex</p>
+  <pre><%= @reference.specialChars(@reference.to_bib)%></pre>
   <div class="actions">
     <%= link_to 'Back', references_path %> |
     <%= link_to 'Edit', edit_reference_path(@reference) %> |
