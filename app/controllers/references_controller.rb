@@ -82,7 +82,7 @@ class ReferencesController < ApplicationController
       data << reference.to_bib + "\n" + "\n"
       end
       send_data data,
-                :filename => "KB04.bib",
+                :filename => "sigproc.bib",
                 :type => "text/plain"
   end
 
