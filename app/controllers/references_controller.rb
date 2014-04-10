@@ -71,12 +71,13 @@ class ReferencesController < ApplicationController
   
   def downloadAll
     refs = Reference.all
+    data = ""
     refs.each do |reference|
-      send_data reference.to_bib,
+      data << reference.to_bib + "\n" + "\n"
+      end
+      send_data data,
                 :filename => "KB04.bib",
                 :type => "text/plain"
-    end
-
   end
 
   private
