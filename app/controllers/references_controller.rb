@@ -15,7 +15,11 @@ class ReferencesController < ApplicationController
 
   # GET /references/new
   def new
-    @reference = Reference.new(entry_type: params[:entry_type].singularize)
+    if params[:entry_type] == "inproceedings"
+      @reference = Reference.new(entry_type: params[:entry_type])
+    else
+      @reference = Reference.new(entry_type: params[:entry_type].singularize)
+    end
   end
 
   # GET /references/1/edit

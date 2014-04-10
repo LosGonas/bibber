@@ -15,7 +15,7 @@ class Reference
       required: [:author, :editor, :title, :publisher, :year], # author OR editor required
       optional: [:volume, :number, :series, :address, :edition, :month, :note, :key]
     },
-    inproceeding: {
+    inproceedings: {
       desc: "An article in a conference proceedings.",
       required: [:author, :title, :booktitle, :year],
       optional: [:editor, :volume, :series, :pages, :address, :month, :organization, :publisher, :note, :key]

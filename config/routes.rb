@@ -10,7 +10,7 @@ Bibber::Application.routes.draw do
   end
 
   Reference.entry_types.each do |et|
-    resources(et, controller: :references, entry_type: et.singularize)
+    resources(et, controller: :references, entry_type: et)
   end
 
   # reference entry types
