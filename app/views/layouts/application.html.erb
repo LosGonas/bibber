@@ -24,9 +24,9 @@
             <li><%= link_to 'Login', login_path %></li>
           <% end %>
           <li><%= link_to 'All references', references_path %></li>
-          <% for et in entry_types %>
-            <li><%= link_to "Add #{et} reference", send("new_#{et}_path") %></li>
-          <% end %>
+
+          <li><%= link_to "Create reference", send("new_#{entry_types.first}_path") %></li>
+
           <li><%= link_to 'Export all references', downloadAll_path(@reference) %>  
         </ul>
       </nav>

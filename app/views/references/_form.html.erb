@@ -12,7 +12,21 @@
   <%= f.hidden_field :user_id, value: current_user.id.to_s %>
   <%= f.hidden_field :entry_type, value: @reference.entry_type %>
 
-  <div class="description">
+
+
+
+    <%= select_tag 'entry', options_for_select(entry_types.each, :selected => @reference.entry_type) %>
+
+    <script>
+        document.getElementById("entry").onchange = function() {
+            window.location.href = "/" + this.value + "s/new"
+        };
+    </script>
+
+
+
+
+    <div class="description">
     <h2><%= @reference.get(:desc) %></h2>
   </div>
 
