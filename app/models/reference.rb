@@ -42,10 +42,14 @@ class Reference
 
 
   def createID
-    str = ""
-    authors = self.entries["author"].split(" ").each {|w| str += w.first}
-    str += self.entries["year"].last(2)
-    self.bib_id = str
+    if( entries["key"].blank? ) then
+      str = ""
+      authors = self.entries["author"].split(" ").each {|w| str += w.first}
+      str += self.entries["year"].last(2)
+      self.bib_id = str
+    else
+      self.bib_id = entries["key"]
+    end
   end
 
   def to_bib(id=self.bib_id)
