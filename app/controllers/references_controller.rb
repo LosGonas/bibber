@@ -85,6 +85,11 @@ class ReferencesController < ApplicationController
     refs.each do |reference|
       data << reference.to_bib + "\n" + "\n"
       end
+    
+    #HUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOM
+    #Tänne tarkistus notta onko useampi id ja jos on niin editoidaan numerot perään!!
+    #HUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOM
+    
       send_data data,
                 :filename => "sigproc.bib",
                 :type => "text/plain"
