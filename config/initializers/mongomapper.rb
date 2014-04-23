@@ -24,6 +24,7 @@ end
 
 #Reference.ensure_index(:searchOptimization)
 
+#Create text index for Reference - needed by search
 Reference.collection.ensure_index({'searchOptimization' => 'text'});
 
 puts "Initialized: #{MongoMapper.database.name}"

@@ -22,9 +22,7 @@ Bibber::Application.routes.draw do
   get 'register' => 'users#new'
   get 'login' => 'sessions#new'
   delete 'logout' => 'sessions#destroy'
-
   get 'search' => 'searches#search'
-  #get 'search' => 'searches#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

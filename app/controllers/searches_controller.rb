@@ -2,12 +2,11 @@ class SearchesController < ApplicationController
 
 
   def search
-    params = search_params
-    str = params['pattern']
-    @params = str
+    @params = search_params['pattern']
 
-    unless str.blank?
-      @references = Reference.collection.find({'$text' => { '$search' => str} }).map{|x| Reference.new(x)}
+    unless @params.blank?
+      #use mongoDB 2.6 text search and create Reference objects from results
+      @references = Reference.collection.find({'$text' => { '$search' => @params} }).map{|x| Reference.new(x)}
     end
     render :index
   end

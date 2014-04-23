@@ -25,7 +25,7 @@ class Reference
   key :entry_type, String
   key :entries, Hash
   key :bib_id, String
-  key :searchOptimization
+  key :searchOptimization #see searchOptimize
 
   # validations
   validates :entry_type, presence: true
@@ -53,12 +53,13 @@ class Reference
     end
   end
 
+  #create searchOptimization for MongoDB text search. Should contain all data desired in the search.
+  ### !!!!!!
+  ### Add Tags to searchOptimization so no changes to search_controller, search view needed ?
+  ### !!!!!!
   def searchOptimize
-    self.searchOptimization = self.entries.reject {|key, val| val.blank?}.map{|k, v| "#{v}"}.join(" ")
+    self.searchOptimization = self.entries.reject{|key, val| val.blank?}.map{|k, v| "#{v}"}.join(" ")
   end
-
-
-
 
 
   def to_bib(id=self.bib_id)
@@ -70,30 +71,23 @@ class Reference
 
     #entries + last row
     str += "#{fields.map {|key, val|"  #{key} = \"#{val}\""}.join(",\n")}\n}"
-
   end
 
 
   def specialChars(bib)
-    #muunnokset
-    h = {"ä" => '\"{a}',
+    conversions = {"ä" => '\"{a}',
          "Ä" => '\"{A}',
          "ö" => '\"{o}',
          "Ö" => '\"{O}',
          "å" => '\r{a}',
          "Å" => '\r{A}'
     }
-    #kaikki läpi
-    bib.gsub(/./) {|m| h.fetch(m,m)}
+    #check all chars, replace as described in above conversions
+    bib.gsub(/./) {|m| conversions.fetch(m,m)}
   end
 
 
-
-
-
-
   # rels
-
 
   def get(field)
     TYPES[entry_type.to_sym][field.to_sym]
