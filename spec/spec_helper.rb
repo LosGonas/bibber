@@ -28,14 +28,18 @@ RSpec.configure do |config|
   # config.mock_with :flexmock
   # config.mock_with :rr
 
-  config.before(:suite)do
-    #DatabaseCleaner[:mongo_mapper].strategy = :truncation
-    DatabaseCleaner.clean
+  config.include FactoryGirl::Syntax::Methods
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
   end
 
   config.before(:each) do
-    DatabaseCleaner[:mongo_mapper].strategy = :truncation
-    #DatabaseCleaner.clean
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
   end
 
 

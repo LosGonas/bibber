@@ -23,7 +23,7 @@ describe ReferencesController do
   # This should return the minimal set of attributes required to create a valid
   # Reference. As you add validations to Reference, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {  } }
+  let(:valid_attributes) { { "author" => "testi", "title" => "testaus", "journal" => "ok", "year" => "2001" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -33,13 +33,13 @@ describe ReferencesController do
 =begin
   describe "GET index" do
     it "assigns all references as @references" do
-      reference = Reference.create! valid_attributes
+      book = FactoryGirl.create(:book)
       get :index, {}, valid_session
-      expect(assigns(:references)).to eq([reference])
+      expect(assigns(:references)).to eq([book])
     end
   end
-=end
-=begin
+
+
   describe "GET show" do
     it "assigns the requested reference as @reference" do
       reference = Reference.create! valid_attributes
@@ -62,8 +62,8 @@ describe ReferencesController do
       expect(assigns(:reference)).to eq(reference)
     end
   end
-=end
 
+=end
 =begin
 
   describe "POST create" do

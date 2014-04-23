@@ -30,7 +30,7 @@ describe UsersController do
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-=begin
+
   describe "GET index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
@@ -38,9 +38,9 @@ describe UsersController do
       expect(assigns(:users)).to eq([user])
     end
   end
-=end
 
-=begin
+
+
   describe "GET show" do
     it "assigns the requested user as @user" do
       user = User.create! valid_attributes
@@ -100,9 +100,9 @@ describe UsersController do
       end
     end
   end
-=end
 
-=begin
+
+
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested user" do
@@ -111,8 +111,8 @@ describe UsersController do
         # specifies that the User created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        expect_any_instance_of(User).to receive(:update).with({ "username" => "MyString" })
-        put :update, {:id => user.to_param, :user => { "username" => "MyString" }}, valid_session
+        #expect_any_instance_of(User).to receive(:update).with({ "username" => "rspecc", "password" => "passu" })
+        put :update, {:id => user.to_param, :user => { "username" => "rspecc", "password" => "passu" }}, valid_session
       end
 
       it "assigns the requested user as @user" do
@@ -146,9 +146,9 @@ describe UsersController do
       end
     end
   end
-=end
 
-=begin
+
+
   describe "DELETE destroy" do
     it "destroys the requested user" do
       user = User.create! valid_attributes
@@ -163,6 +163,6 @@ describe UsersController do
       expect(response).to redirect_to(users_url)
     end
   end
-=end
+
 
 end
