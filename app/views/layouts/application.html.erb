@@ -24,6 +24,8 @@
             <li><%= link_to 'Login', login_path %></li>
           <% end %>
           <li><%= link_to 'All references', references_path %></li>
+          
+          <li><%= link_to 'Filter references', references_path %></li>
 
           <li><%= link_to "Create reference", send("new_#{entry_types.first}_path") %></li>
 

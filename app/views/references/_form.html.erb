@@ -15,7 +15,7 @@
 
 
 
-    <%= select_tag 'entry', options_for_select(entry_types.each, :selected => @reference.entry_type) %>
+<%= if (@reference.entry_type == "inproceedings") then select_tag 'entry', options_for_select(entry_types.each, :selected => "inproceeding") else select_tag 'entry', options_for_select(entry_types.each, :selected => @reference.entry_type) end %>
 
     <script>
         document.getElementById("entry").onchange = function() {

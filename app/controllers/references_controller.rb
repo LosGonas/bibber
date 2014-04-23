@@ -75,7 +75,7 @@ class ReferencesController < ApplicationController
   def download
     ref = Reference.find(params[:id])
     send_data ref.to_bib,
-              :filename => "KB04.bib",
+    :filename => "reference.bib",
               :type => "text/plain"
   end
   
