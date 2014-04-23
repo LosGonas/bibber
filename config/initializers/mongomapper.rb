@@ -22,4 +22,9 @@ end
 
 #@@gridfs = Mongo::Grid.new(MongoMapper.database, 'attachments')
 
+#Reference.ensure_index(:searchOptimization)
+
+Reference.collection.ensure_index({'searchOptimization' => 'text'});
+
 puts "Initialized: #{MongoMapper.database.name}"
+

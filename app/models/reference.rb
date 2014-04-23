@@ -25,6 +25,7 @@ class Reference
   key :entry_type, String
   key :entries, Hash
   key :bib_id, String
+  key :searchOptimization
 
   # validations
   validates :entry_type, presence: true
@@ -52,11 +53,19 @@ class Reference
     end
   end
 
+  def searchOptimize
+    self.searchOptimization = self.entries.reject {|key, val| val.blank?}.map{|k, v| "#{v}"}.join(" ")
+  end
+
+
+
+
+
   def to_bib(id=self.bib_id)
     #first row
     str = "@#{entry_type} {#{id},\n"
 
-    #filter blanks
+    #reject blank fields
     fields = entries.reject {|key, val| val.blank?}
 
     #entries + last row

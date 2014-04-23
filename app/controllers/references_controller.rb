@@ -31,6 +31,7 @@ class ReferencesController < ApplicationController
   def create
     @reference = Reference.new(reference_params)
     @reference.createID
+    @reference.searchOptimize
 
     respond_to do |format|
       if @reference.save
@@ -49,8 +50,9 @@ class ReferencesController < ApplicationController
     respond_to do |format|
       if @reference.update_attributes(reference_params)
 
-        #set new ID and save
+        #set new ID, searchOptimize and save
         @reference.createID
+        @reference.searchOptimize
         @reference.save
 
         format.html { redirect_to @reference, notice: 'Reference was successfully updated.' }

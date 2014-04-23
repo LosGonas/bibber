@@ -1,0 +1,35 @@
+
+<form action="/search" method="get">
+    <input type="text" name="pattern">
+    <button type="submit">Search!</button>
+</form>
+
+
+<% unless @params.blank?%>
+    <p>Searched for: <%=@params%></p>
+<%end %>
+
+<% unless @references.nil? %>
+    <div id="references">
+      <% @references.each do |reference| %>
+          <div class="reference">
+            <h3><%= reference.entry_type %></h3>
+            <% reference.entries.each do |key, value| %>
+                <% if value.present? %>
+                    <div class="entry">
+                      <span class="key"><%= key.capitalize %></span>
+                      <span class="key"><%= value %></span>
+                    </div>
+                <% end %>
+            <% end %>
+            <div class="actions">
+              <%= link_to 'Show', reference_path(reference.id) %> |
+              <%= link_to 'Edit', edit_reference_path(reference.id) %> |
+              <%= link_to 'Export', download_reference_path(reference.id) %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+<%end %>
+
+
