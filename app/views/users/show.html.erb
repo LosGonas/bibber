@@ -3,10 +3,9 @@
   <%= @user.username %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+
+<%= link_to 'Edit user info', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
 
 <h2>My References</h2>
 
@@ -31,5 +30,3 @@
       </div>
   <% end %>
 </div>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
