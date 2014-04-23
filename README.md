@@ -22,3 +22,9 @@ http://bibb.herokuapp.com/
 ## Backlogs
 
 http://agilefant.jamo.io/agilefant/editProject.action?projectId=3
+
+![alt tag](images/user.png)
+
+![alt tag](images/refs.png)
+
+![alt tag](images/code_cov.png)
