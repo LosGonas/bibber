@@ -5,8 +5,7 @@ Miniproject's repo for Ohtu course at CSDep of HY.
 ## URL
 185.20.139.16
 
-## Travis
-[![Build Status](https://travis-ci.org/LosGonas/bibber.png)](https://travis-ci.org/LosGonas/bibber)
+
 
 ## Team
 
