@@ -76,7 +76,7 @@ class ReferencesController < ApplicationController
 
   def download
     ref = Reference.find(params[:id])
-    send_data ref.to_bib,
+    send_data ref.specialChars(ref.to_bib),
     :filename => "reference.bib",
               :type => "text/plain"
   end
@@ -85,7 +85,7 @@ class ReferencesController < ApplicationController
     refs = Reference.all
     data = ""
     refs.each do |reference|
-      data << reference.to_bib + "\n" + "\n"
+      data << reference.specialChars(ref.to_bib) + "\n" + "\n"
       end
     
     #HUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOM
