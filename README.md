@@ -3,7 +3,7 @@
 Miniproject's repo for Ohtu course at CSDep of HY.
 
 ## URL
-185.20.139.16
+http://185.20.139.16
 
 
 
