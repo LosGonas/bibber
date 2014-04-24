@@ -85,7 +85,7 @@ class ReferencesController < ApplicationController
     refs = Reference.all
     data = ""
     refs.each do |reference|
-      data << reference.specialChars(ref.to_bib) + "\n" + "\n"
+      data << reference.specialChars(reference.to_bib) + "\n" + "\n"
       end
     
     #HUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOMHUOM
