@@ -3,7 +3,7 @@
 Miniproject's repo for Ohtu course at CSDep of HY.
 
 ## Document from project
-
+https://github.com/LosGonas/bibber/blob/master/doc/kokemukset_miniprojektista.pdf?raw=true
 
 ## URL
 bibb.herokuapp.com
