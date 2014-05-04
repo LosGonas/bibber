@@ -2,9 +2,11 @@
 
 Miniproject's repo for Ohtu course at CSDep of HY.
 
-## URL
-http://185.20.139.16
+## Document from project
 
+
+## URL
+bibb.herokuapp.com
 
 
 ## Team
